@@ -38,6 +38,11 @@
             text-decoration: none;
             font-size: 17px;
         }
+        .topnav a img{
+            max-height: 53px;
+            max-width: 72px;
+            transform: scale(1);
+        }
 
         /* Change the color of links on hover */
         .topnav a:hover {
@@ -71,11 +76,9 @@
                 <a href="/register">Register</a>
             </c:otherwise>
         </c:choose>
-        
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
         <c:choose>
             <c:when test="${user != null}">
+                <a><img src="https://leandrobucket.s3.sa-east-1.amazonaws.com/${user.id}" style=""/></a>
                 <a id="user">${user.username}</a>
                 <a href="/auth/signout">Logout</a>
             </c:when>
